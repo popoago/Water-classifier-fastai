@@ -24,7 +24,7 @@ app = Flask(__name__)
 
 
 path = Path("path")
-classes = ['cleanwater', 'dirtywater']
+classes = ['good', 'bad']
 data2 = ImageDataBunch.single_from_classes(path, classes, tfms=get_transforms(), size=224).normalize(imagenet_stats)
 learn = create_cnn(data2, models.resnet34)
 learn.load('stage-2')
